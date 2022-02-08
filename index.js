@@ -5,7 +5,7 @@ const port = 3000
 app.use(express.json())
 // ez mindig kell, ha valahonnan egy json típusú dolog érkezik, alapból felparseolja, belerakja req.bodyba
 app.use(cors())
-// npm i cors
+// npm i cors - ezzel engedélyezzük cross origin requestet, így tudjuk frontendről (másik portról) szerkeszteni
 
 // insomnia (google) - insomnia.rest - requestek küldése
 // terminalból request curl (google)
