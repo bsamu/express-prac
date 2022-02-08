@@ -1,0 +1,12 @@
+GET http://localhost:3000/api/cars
+
+###
+
+POST http://localhost:3000/api/cars HTTP/1.1
+content-type: application/json
+
+{
+    "model": "Mazda",
+    "maxSpeed": "190",
+    "megjegyzes": "figyelni, hogy content-type utan kell 1 ures sor!"
+}
