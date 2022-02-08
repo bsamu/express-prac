@@ -1,7 +1,10 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = 3000
 app.use(express.json())
+app.use(cors())
+// npm i cors
 
 const cars = [
     {
@@ -28,12 +31,11 @@ app.get('/api/cars', (req, res) => {
 app.post('/api/cars', (req, res) => {
     console.log(req.body);
 
-    if (!req.body.name || !req.body.speed) return res.send("Missing parameters")
+    if (!req.body.model || !req.body.maxSpeed) return res.send("Missing parameters")
 
     const newCar = {
+        ...req.body,
         id: cars.length + 1,
-        model: req.body.name,
-        maxSpeed: req.body.speed
     }
     cars.push(newCar)
     res.send("DONE")
